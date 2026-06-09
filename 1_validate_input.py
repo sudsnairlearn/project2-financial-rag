@@ -1,10 +1,9 @@
 """
 Step 1 — Validate that the local 10-K file exists in the data folder.
 
-Does not download from EDGAR. The file must already exist as one of:
-- data/sample_10k.txt  (when USE_SAMPLE=True)
-- data/<company>_10k.txt  (preferred, when USE_SAMPLE=False)
-- data/<company>_10k.pdf  (fallback, when USE_SAMPLE=False)
+The file must be present as either:
+- data/<company>_10k.txt
+- data/<company>_10k.pdf
 
 Usage:
     python 1_validate_input.py
@@ -17,9 +16,7 @@ import config
 
 
 def get_local_file_path(company_name: str) -> str:
-    """Return the path of the first matching file: sample → .txt → .pdf."""
-    if config.USE_SAMPLE:
-        return config.SAMPLE_DOC_PATH
+    """Return the path of the first matching file: .txt → .pdf."""
     base = company_name.lower()
     txt_path = os.path.join(config.DATA_DIR, f"{base}_10k.txt")
     pdf_path = os.path.join(config.DATA_DIR, f"{base}_10k.pdf")
@@ -27,8 +24,7 @@ def get_local_file_path(company_name: str) -> str:
         return txt_path
     if os.path.exists(pdf_path):
         return pdf_path
-    # Neither found — return the txt path so the error message is actionable
-    return txt_path
+    return txt_path  # return expected path so error message is actionable
 
 
 def fetch_and_save(company_name: str) -> str:

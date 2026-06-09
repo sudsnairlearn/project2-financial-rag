@@ -22,12 +22,6 @@ COMPANY_CIKS = {
 }
 TARGET_COMPANY = "Apple"
 
-# ── Sample document ───────────────────────────────────────────────────────────
-# USE_SAMPLE=True  → load ./data/sample_10k.txt (no real filing needed)
-# USE_SAMPLE=False → look for data/<company>_10k.txt or data/<company>_10k.pdf
-USE_SAMPLE      = False
-SAMPLE_DOC_PATH = "./data/sample_10k.txt"
-
 # ── Data / Storage ────────────────────────────────────────────────────────────
 DATA_DIR          = "./data"
 FAISS_DIR_FIXED   = "./faiss_fixed"    # FAISS index for fixed-size chunks

@@ -58,11 +58,9 @@ def load_pdf_text(path: str) -> str:
 
 
 def get_input_file_path(company: str) -> str:
-    if config.USE_SAMPLE:
-        return config.SAMPLE_DOC_PATH
-
-    txt_path = os.path.join(config.DATA_DIR, f"{company.lower()}_10k.txt")
-    pdf_path = os.path.join(config.DATA_DIR, f"{company.lower()}_10k.pdf")
+    base = company.lower()
+    txt_path = os.path.join(config.DATA_DIR, f"{base}_10k.txt")
+    pdf_path = os.path.join(config.DATA_DIR, f"{base}_10k.pdf")
     if os.path.exists(txt_path):
         return txt_path
     if os.path.exists(pdf_path):
@@ -74,16 +72,9 @@ def get_input_file_path(company: str) -> str:
 
 def load_text(company: str) -> str:
     path = get_input_file_path(company)
-    if config.USE_SAMPLE:
-        if not os.path.exists(path):
-            raise FileNotFoundError(f"Sample doc not found at {path}.")
-        print(f"  (Using sample document: {path})")
-        print("  To use a real 10-K, set USE_SAMPLE=False in config.py and place a .txt or .pdf file in data/.")
-
     if path.lower().endswith(".pdf"):
         print(f"  Loading PDF document: {path}")
         return load_pdf_text(path)
-
     with open(path, encoding="utf-8") as f:
         return f.read()
 
