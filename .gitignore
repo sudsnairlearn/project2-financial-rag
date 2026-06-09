@@ -1,0 +1,27 @@
+# Environment
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Vector store indices
+faiss_fixed/
+faiss_semantic/
+
+# Evaluation outputs
+evaluation_results.json
+comparison_report.md
+
+# Data (real filings — keep sample files)
+data/*_10k.pdf
+data/*_10k.txt
+!data/sample_10k.txt
+!data/sample_10k_meta.json
+
+# HuggingFace model cache
+*.safetensors
+
+# OS
+.DS_Store
+Thumbs.db

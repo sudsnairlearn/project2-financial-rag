@@ -1,0 +1,35 @@
+{
+  "company": "Apex Technologies Inc.",
+  "note": "Sample document for demo/testing. Structured as a real 10-K. Place a real Apple 10-K in data/apple_10k.txt and set USE_SAMPLE=False in config.py to use it.",
+  "filing_type": "10-K",
+  "fiscal_year_end": "September 30, 2023",
+  "source": "sample",
+  "sections_included": [
+    "Part I: Business Overview",
+    "Part I: Risk Factors (supply chain, geopolitical, cybersecurity)",
+    "Part II: MD&A (segment performance, outlook)",
+    "Part II: Income Statement (FY2021–2023)",
+    "Part II: Net Sales by Product Category (FY2021–2023)",
+    "Part II: Balance Sheet",
+    "Part II: Long-Term Debt Maturity Schedule",
+    "Part II: Legal Proceedings",
+    "ESG / Environmental Commitments"
+  ],
+  "query_coverage": {
+    "1_total_revenue": "Income Statement — Total net sales FY2023: $383.3B",
+    "2_product_segments": "Net Sales by Product Category table",
+    "3_services_gross_margin": "Gross margin percentage — Services: 70.8%",
+    "4_supply_chain_risks": "Risk Factors — Supply Chain section",
+    "5_competitive_position": "Business — Competition section",
+    "6_forward_looking": "MD&A — Outlook section",
+    "7_capital_return": "Business — Capital Return Program section",
+    "8_three_year_revenue": "Income Statement — FY2021/2022/2023 columns",
+    "9_balance_sheet": "Balance Sheet — Total assets: $321.1B, Total liabilities: $284.5B",
+    "10_opex_breakdown": "Income Statement — R&D $29.9B, SG&A $24.9B",
+    "11_debt_schedule": "Long-Term Debt Maturity Schedule table",
+    "12_rnd_strategy": "Business — Research and Development section",
+    "13_legal_proceedings": "Legal Proceedings — Epic Games, EU Commission, patent litigation",
+    "14_esg": "ESG — Environmental Commitments section",
+    "15_genai_policy": "NOT IN DOCUMENT — pipeline should refuse (refusal test)"
+  }
+}
