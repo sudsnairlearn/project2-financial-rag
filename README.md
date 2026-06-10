@@ -21,6 +21,8 @@ showing which approach wins for each query type and why.
 
 Retrieval is now hybrid: it combines vector similarity with a lightweight BM25 keyword pass before the optional reranker step.
 
+The main user experience is a Streamlit chat UI in `app.py`, where you can ask questions about the filing and compare the fixed vs. semantic retrieval strategies.
+
 ---
 
 ## Setup
@@ -92,7 +94,16 @@ python 2_chunk_and_embed.py
 This runs two chunking strategies and embeds both via Nebius Token Factory.
 Expect ~3–5 minutes for a full 10-K (many embedding API calls for semantic chunking).
 
-### 5. Run the full evaluation
+### 5. Launch the Streamlit UI
+
+```bash
+streamlit run app.py
+```
+
+This starts the interactive chat interface for querying the financial RAG pipeline.
+If you are using the project virtual environment, activate it first or run the executable from `.venv`.
+
+### 6. Run the full evaluation (optional)
 
 ```bash
 python 4_run_evaluation.py
@@ -145,7 +156,7 @@ Outputs:
 
 ---
 
-## Manually test a single query
+## Manually test a single query (optional)
 
 ```python
 from dotenv import load_dotenv
