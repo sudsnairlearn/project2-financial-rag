@@ -176,11 +176,3 @@ for strategy in ("fixed", "semantic"):
 
 ---
 
-## Submission checklist
-
-- [ ] Local 10-K file exists in `data/`
-- [ ] `2_chunk_and_embed.py` run — both Chroma dirs exist
-- [ ] `4_run_evaluation.py` run — `comparison_report.md` exists
-- [ ] Demo recording (≤5 min): walk through pipeline, show chunking size differences, show one query across all four conditions
-- [ ] GitHub repo or zip uploaded
-- [ ] Submitted at https://forms.gle/3vj27gwoxw2xk9B7A
